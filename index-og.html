@@ -212,7 +212,7 @@
 
   .presents {
     font-family: 'Major Mono Display', monospace;
-    font-size: clamp(11px, 1.3vw, 14px);
+    font-size: clamp(14px, 1.3vw, 16px);
     color: var(--cyan);
     letter-spacing: 0.3em;
     text-transform: lowercase;
@@ -229,34 +229,6 @@
   .presents::after {
     background: linear-gradient(90deg, var(--cyan), transparent);
   }
-
-  /* Catapult Motion lockup (wordmark + 3-circle mark) above the eyebrow */
-  .cm-lockup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 0 auto 18px;
-    width: max-content;
-    filter:
-      drop-shadow(0 0 14px rgba(0,232,255,0.35))
-      drop-shadow(0 0 28px rgba(139,92,255,0.25));
-    transition: transform 0.2s, filter 0.2s;
-  }
-  .cm-lockup:hover {
-    transform: translateY(-2px);
-    filter:
-      drop-shadow(0 0 18px rgba(0,232,255,0.6))
-      drop-shadow(0 0 36px rgba(139,92,255,0.4));
-  }
-  .cm-wordmark {
-    width: 180px;
-    height: auto;
-    display: block;
-    /* Wordmark ships dark — invert it for the dark hero */
-    filter: invert(1) brightness(1.1);
-  }
-  .cm-mark { width: 96px; height: auto; display: block; }
 
   /* Logo */
   .logo-wrap {
@@ -454,7 +426,7 @@
     display: block;
     margin-top: 6px;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -585,7 +557,7 @@
     border: 1px solid var(--cyan);
     color: var(--cyan);
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     box-shadow: 0 0 18px rgba(0,232,255,0.3);
@@ -603,7 +575,7 @@
   }
   .eyebrow {
     font-family: 'Major Mono Display', monospace;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--cyan);
     letter-spacing: 0.4em;
     text-transform: lowercase;
@@ -679,7 +651,7 @@
   .field-list .marker {
     font-family: 'Major Mono Display', monospace;
     color: var(--pink);
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.15em;
     text-shadow: 0 0 8px rgba(255,43,214,0.6);
     min-width: 24px;
@@ -708,42 +680,6 @@
     color: var(--ink-dim);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-  }
-
-  /* Divisions chip grid */
-  .div-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-top: 10px;
-  }
-  .div-chip {
-    text-align: center;
-    padding: 12px 4px;
-    border-radius: 10px;
-    background: color-mix(in srgb, var(--c) 10%, transparent);
-    border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .div-chip:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 18px color-mix(in srgb, var(--c) 50%, transparent);
-  }
-  .div-chip[hidden] { display: none; }
-  .div-tag {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 900;
-    font-size: 20px;
-    color: var(--c);
-    text-shadow: 0 0 10px var(--c);
-    line-height: 1;
-  }
-  .div-year {
-    margin-top: 6px;
-    font-family: 'Major Mono Display', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    color: var(--ink-dim);
   }
 
   /* Perks layout */
@@ -834,7 +770,7 @@
     border-radius: 999px;
     background: rgba(255,233,53,0.08);
     border: 1px solid rgba(255,233,53,0.4);
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink);
     letter-spacing: 0.04em;
     font-weight: 600;
@@ -907,15 +843,11 @@
     font-family: 'Audiowide', sans-serif;
     font-size: 16px;
     letter-spacing: 0.05em;
-    color: var(--ink);
-    text-decoration: none;
-    transition: text-shadow 0.2s, transform 0.2s;
   }
-  a.foot-logo:hover { text-shadow: 0 0 12px var(--cyan); transform: translateY(-1px); }
   .foot-logo .lo { color: var(--cyan); }
   .foot-logo .so { color: var(--pink); }
   .foot-meta {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink-dim);
     font-family: 'Major Mono Display', monospace;
     letter-spacing: 0.1em;
@@ -962,22 +894,13 @@
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="container">
-    <a href="https://www.catapultmotion.com/" target="_blank" rel="noopener" class="cm-lockup" aria-label="Catapult Motion">
-      <img src="assets/catapult-motion-wordmark.svg" alt="Catapult" class="cm-wordmark" style="width: 140px" />
-      <svg viewBox="0 0 215.64 136.4" aria-hidden="true" class="cm-mark" style="width: 50px">
-        <circle cx="68.2" cy="68.2" r="61.2" style="stroke:#0f1c29;stroke-miterlimit:10;stroke-width:14px;fill:#414042"></circle>
-        <circle cx="104.33" cy="68.2" r="61.2" style="fill:#939598;stroke:#0f1c29;stroke-miterlimit:10;stroke-width:14px"></circle>
-        <circle cx="147.44" cy="68.2" r="61.2" style="fill:#fff;stroke:#0f1c29;stroke-miterlimit:10;stroke-width:14px"></circle>
-      </svg>
-    </a>
-    <div class="presents" style="font-size: 14px; font-weight: 900; font-family: &quot;Major Mono Display&quot;">catapult motion
-presents</div>
+    <div class="presents">catapult motion presents</div>
 
     <div class="logo-wrap">
       <img src="assets/logo.png" alt="Lights Out Shootout — 3 Point Challenge" class="logo" />
     </div>
 
-    <p class="tagline" id="tagline" style="font-size: 24px">One day, Five racks, Infinite greatness</p>
+    <p class="tagline"><em>Catapult Motion</em> presents Ontario's premiere 3-point shooting challenge — one day, one rack, infinite glow.</p>
 
     <div class="countdown" id="countdown" aria-label="Time until tip-off">
       <div class="cd-box"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Days</span></div>
@@ -1048,17 +971,24 @@ presents</div>
           <p>Burlington, ON L7N 3G2</p>
           <ul class="field-list" style="margin-top:18px;">
             <li>
-              <span class="marker" style="font-size: 18px; font-weight: 900">09:00</span>
+              <span class="marker">09:00&nbsp;&nbsp;</span>
               <div>
                 <strong>Doors &amp; Check-in</strong><br/>
                 <span class="muted">Staggered arrival — see your division block</span>
               </div>
             </li>
             <li>
-              <span class="marker" style="font-size: 18px; font-weight: 900">09:30</span>
+              <span class="marker">2:hours</span>
               <div>
-                <strong>Lights Out / Shoot Out</strong><br/>
+                <strong>Participant Block</strong><br/>
                 <span class="muted">Warm-up, contest rounds, finals</span>
+              </div>
+            </li>
+            <li>
+              <span class="marker">15:00&nbsp;&nbsp;</span>
+              <div>
+                <strong>Closing Ceremony</strong><br/>
+                <span class="muted">Trophies, golden tickets, raffle draws</span>
               </div>
             </li>
           </ul>
@@ -1082,39 +1012,23 @@ presents</div>
           <p><strong>Boys &amp; Girls</strong> &nbsp;|&nbsp; Ages 11–17</p>
           <p class="muted" style="margin-bottom: 18px;">Grouped by birth year &amp; gender</p>
 
-          <div class="div-grid" id="div-grid">
-            <div class="div-chip" data-division="U11" style="--c:#00e8ff;">
-              <div class="div-tag">U11</div>
-              <div class="div-year">2015</div>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 10px;">
+            <div style="text-align:center; padding: 14px 6px; border-radius: 10px; background: rgba(0,232,255,0.08); border: 1px solid rgba(0,232,255,0.4);">
+              <div style="font-family:'Orbitron'; font-weight:900; font-size: 22px; color: var(--cyan); text-shadow: 0 0 10px var(--cyan);">U13</div>
+              <div style="font-size: 14px; color: var(--ink-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px;">11–12</div>
             </div>
-            <div class="div-chip" data-division="U12" style="--c:#8b5cff;">
-              <div class="div-tag">U12</div>
-              <div class="div-year">2014</div>
+            <div style="text-align:center; padding: 14px 6px; border-radius: 10px; background: rgba(139,92,255,0.08); border: 1px solid rgba(139,92,255,0.4);">
+              <div style="font-family:'Orbitron'; font-weight:900; font-size: 22px; color: var(--violet); text-shadow: 0 0 10px var(--violet);">U15</div>
+              <div style="font-size: 14px; color: var(--ink-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px;">13–14</div>
             </div>
-            <div class="div-chip" data-division="U13" style="--c:#ff2bd6;">
-              <div class="div-tag">U13</div>
-              <div class="div-year">2013</div>
-            </div>
-            <div class="div-chip" data-division="U14" style="--c:#ffe935;">
-              <div class="div-tag">U14</div>
-              <div class="div-year">2012</div>
-            </div>
-            <div class="div-chip" data-division="U15" style="--c:#00e8ff;">
-              <div class="div-tag">U15</div>
-              <div class="div-year">2011</div>
-            </div>
-            <div class="div-chip" data-division="U16" style="--c:#8b5cff;">
-              <div class="div-tag">U16</div>
-              <div class="div-year">2010</div>
-            </div>
-            <div class="div-chip" data-division="U17" style="--c:#ff2bd6;">
-              <div class="div-tag">U17</div>
-              <div class="div-year">2009</div>
+            <div style="text-align:center; padding: 14px 6px; border-radius: 10px; background: rgba(255,43,214,0.08); border: 1px solid rgba(255,43,214,0.4);">
+              <div style="font-family:'Orbitron'; font-weight:900; font-size: 22px; color: var(--pink); text-shadow: 0 0 10px var(--pink);">U18</div>
+              <div style="font-size: 14px; color: var(--ink-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px;">15–17</div>
             </div>
           </div>
 
           <p class="muted" style="margin-top: 20px; padding: 10px 12px; background: rgba(255,233,53,0.06); border-left: 2px solid var(--yellow); border-radius: 4px;">
-            <strong style="color: var(--yellow); text-transform: uppercase; font-size: 11px; letter-spacing: 0.2em;">⚠ Note</strong><br/>
+            <strong style="color: var(--yellow); text-transform: uppercase; font-size: 14px; letter-spacing: 0.2em;">⚠ Note</strong><br/>
             Birth year ID required onsite at check-in.
           </p>
         </div>
@@ -1211,7 +1125,7 @@ presents</div>
                 <li>🏆 Official LO/SO Award</li>
                 <li>📦 Champion's Prize Pack</li>
                 <li>📊 Leaderboard Status</li>
-                <li>🎟 Next LO/SO to defend their crown</li>
+                <li>🎟 Golden Ticket — next comp</li>
                 <li>🎯 Private Pro Shooting Lessons</li>
               </ul>
             </div>
@@ -1234,7 +1148,7 @@ presents</div>
         <div class="card-body">
           <div class="price-tag">
             <span class="dollar">$</span>
-            <span class="amount" id="entry-fee">40</span>
+            <span class="amount">40</span>
             <span class="unit">/ shooter</span>
           </div>
           <p>Collected later via <strong>e-Transfer</strong> — no upfront payment required at signup.</p>
@@ -1264,11 +1178,11 @@ presents</div>
             </li>
             <li>
               <span class="marker">02</span>
-              <div><strong>70 seconds on the clock</strong><br/><span class="muted">Money ball at the top of every rack + Special bonus shot (LOSO spot shot)</span></div>
+              <div><strong>60 seconds on the clock</strong><br/><span class="muted">Money ball at the top of every rack.</span></div>
             </li>
             <li>
               <span class="marker">03</span>
-              <div><strong>Bracket finals</strong><br/><span class="muted">Top 3 per division shoot it out for division champ title.</span></div>
+              <div><strong>Bracket finals</strong><br/><span class="muted">Top 4 per division shoot it out for the title.</span></div>
             </li>
           </ul>
         </div>
@@ -1298,8 +1212,8 @@ presents</div>
   <div class="container">
     <div class="foot">
       <div class="foot-brand">
-        <a class="foot-logo" href="https://www.catapultmotion.com/" target="_blank" rel="noopener"><span class="lo">CATAPULT</span> MOTION</a>
-        <!-- <div class="foot-logo">B-TOWN <span class="so">COURTS</span></div> -->
+        <div class="foot-logo"><span class="lo">CATAPULT</span> MOTION</div>
+        <div class="foot-logo">B-TOWN <span class="so">COURTS</span></div>
       </div>
       <div class="foot-meta">© 2026 LO/SO 3PT CHALLENGE · ONTARIO · CA</div>
     </div>
